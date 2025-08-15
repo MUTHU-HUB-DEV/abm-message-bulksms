@@ -1,0 +1,407 @@
+  
+        /* Reset and Base Styles */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Header Styles */
+        header {
+            transition: all 0.3s ease;
+        }
+
+        /* Initial header state */
+        header.glass {
+            background: rgba(15, 23, 42, 0.8);
+            /* Darker base for better text contrast */
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Scrolled header state */
+        header.scrolled {
+            background: rgba(15, 23, 42, 0.95) !important;
+            /* More opaque when scrolled */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Mobile menu button color */
+        .mobile-toggle span {
+            background: white;
+            /* Changed from #374151 to white */
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            background: rgba(15, 23, 42, 0.98);
+            /* Dark background for mobile menu */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu a {
+            color: white !important;
+            /* White text for mobile menu */
+        }
+
+        .mobile-menu a:hover {
+            background: rgba(255, 255, 255, 0.1) !important;
+            /* Subtle hover effect */
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-bg-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .gradient-bg-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .gradient-bg-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+        }
+
+        .whatsapp-pulse {
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        /* Hero Section - Fixed */
+        .hero-bg {
+            background: url('./images/bulk-sms-solution-dark-hero-background.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 100vh;
+            z-index: 1;
+        }
+
+        .hero-bg>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Feature Highlight Cards */
+        .feature-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: linear-gradient(45deg,
+                    rgba(255, 255, 255, 0.4),
+                    rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0.4));
+            background-size: 200% 200%;
+            border-radius: 12px;
+            animation: gradientBorder 3s ease infinite;
+        }
+
+        .feature-highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: #6366f1;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .filter-section {
+            transition: all 0.3s ease;
+        }
+
+        /* Initially show all sections */
+        .filter-section {
+            display: block;
+        }
+
+        @keyframes gradientBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Animated dots pattern */
+        @keyframes moveDots {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 20px 20px;
+            }
+        }
+
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #ec4899);
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        .mobile-menu {
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background: #6366f1;
+            border-radius: 1px;
+        }
+
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background: #374151;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .mobile-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+       
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #4338ca, #db2777);
+        }
+
+        /* Loading animation */
+        .loaded {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: 2px solid #6366f1;
+            outline-offset: 2px;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .glass {
+                background: rgba(255, 255, 255, 0.9);
+                border: 2px solid #000;
+            }
+
+            .glass-dark {
+                background: rgba(0, 0, 0, 0.9);
+                border: 2px solid #fff;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .floating-animation {
+                animation: none !important;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+
+            .fixed,
+            .whatsapp-float,
+            .scroll-indicator {
+                display: none !important;
+            }
+
+            * {
+                color: #000 !important;
+                background: #fff !important;
+            }
+        }
+
+#goToTopBtn {
+  transition: opacity;
+  outline: none;
+  border:none;
+}
+
+#goToTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#progressCircle {
+  transition: stroke-dashoffset 0.3s ease;
+}
+/*clients section*/
